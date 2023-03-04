@@ -1,0 +1,44 @@
+html {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+
+button {
+    padding: 5px 10px;
+    border: none;
+    background-color: rgb(158, 207, 145);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color .2s ease-in-out, color .2s ease;
+}
+
+button:hover {
+    background-color: rgb(126, 156, 118);
+}
+
+button:active {
+    background-color: black;
+    color: white;
+}
+
+.wrapp {
+    width: max-content;
+    margin: 40vh auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 7px 7px 8px 5px rgba(194, 129, 43, 0.7);
+    border: 1px solid gray;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+}
+
+.svg {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 450px;
+}

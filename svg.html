@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>371795</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="./visual-script.js"></script>
+</head>
+<body>
+    <div class="wrapp svg">
+      <h4 title="Sukharev">Преобразование в SVG</h4>
+      
+        <script id="stylesheet" type="text/xsl">
+      <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+        <xsl:output method="xml" indent="yes"/>
+        <xsl:template match="root">
+          <svg width="{графика/@ширина}" height="{графика/@высота}">
+            <xsl:apply-templates select="графика/эллипс"/>
+          </svg>
+        </xsl:template>
+        <xsl:template match="эллипс">
+          <ellipse id="{@id}" fill="{@заливка}" stroke="{@ободок}" stroke-width="{@ширина-ободка}" cx="{@cx}" cy="{@cy}" rx="{@rx}" ry="{@ry}"/>
+        </xsl:template>
+      </xsl:stylesheet>
+        </script>
+      
+      <script id="svg_xml" type="text/xml">
+        <root>
+      <графика ширина="440" высота="350">
+      <эллипс id="графика_1" заливка="rgba(255,0,0,0.5)" ободок="white" ширина-ободка="5" cx="206" cy="139" rx="100" ry="100"/>
+      <эллипс id="графика_2" заливка="rgba(0,0,255,0.5)" ободок="white" ширина-ободка="5" cx="108" cy="111" rx="100" ry="100"/>
+      <эллипс id="графика_3" заливка="rgba(0,255,0,0.5)" ободок="white" ширина-ободка="5" cx="134" cy="215" rx="100" ry="100"/>
+      </графика>
+         </root>
+       </script>
+      
+        <script>
+          window.onload = function renderTransformedXml() {
+        document.getElementById('result').innerHTML = transform('svg_xml');
+      };
+        </script>
+        <pre id="result" class="result"></pre>
+        <button onclick="location.href='./index.html';">Go back!</button>
+    </div>
+</body>
+</html>
